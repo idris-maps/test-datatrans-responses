@@ -9,9 +9,11 @@ app.use(bodyParser.xml())
 
 const data = []
 
-app.get('/', (req, res) => res.status(200).json(data))
+app.get('/', (req, res) => res.status(200).json({ message: 'hello' }))
 
-app.post('/', (req, res) => {
+app.get('/datatrans', (req, res) => res.status(200).json(data))
+
+app.post('/datatrans', (req, res) => {
   data.push({
     date: new Date(),
     body: req.body,
