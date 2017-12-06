@@ -1,11 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const enableBodyParserXml = require('body-parser-xml')
 enableBodyParserXml(bodyParser)
 
 const app = express()
 
 app.use(bodyParser.xml())
+app.use(cors())
 
 const data = []
 
