@@ -26,10 +26,10 @@ app.get('/contracts/:policyId', (req, res) => {
 app.get('/datatrans', (req, res) => res.status(200).json(data))
 
 app.post('/datatrans', (req, res) => {
-  const body = parseWebhookBody(req.body)
+  const datatransResponse = parseWebhookBody(req.body)
   data.push({
     date: new Date(),
-    body,
+    datatransResponse,
     policyId: body.refno
   })
   return res.status(200).json({ message: 'hello' })
