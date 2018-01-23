@@ -31,7 +31,7 @@ app.post('/datatrans', (req, res) => {
     date: new Date(),
     datatransResponse,
     datatransResponseRaw: req.body,
-    policyId: body.refno,
+    policyId:  datatransResponse.refno,
   })
   return res.status(200).json({ message: 'hello' })
 })
